@@ -1,4 +1,5 @@
-﻿using static View;
+﻿using System;
+using static View;
 
 public class Example
 {
@@ -72,9 +73,164 @@ public class Example
         {
             Print("Го работать");
         }
-        //else
+        else
         {
             GetJob();
         }
+    }
+
+    public void GetDay()
+    {
+        Print("Введите день недели");
+
+        int day = GetInt();
+
+        switch (day)
+        {
+            case 1:
+            {
+                Print("Понедельник");
+                break;
+            }
+            case 2:
+            {
+                Print("Вторник");
+                break;
+            }
+            case 3:
+            {
+                Print("Среда");
+                break;
+            }
+            case 4:
+            {
+                Print("Четверг");
+                break;
+            }
+            case 5:
+            {
+                Print("Пятница");
+                break;
+            }
+            case 6:
+            case 7:
+            {
+                Print("Суббота или воскресенье");
+                break;
+            }
+            default:
+            {
+                Print("Нет такого");
+                break;
+            }
+        }
+
+        //if (day == 1)
+        //{
+        //    Print("Понедельник");
+        //}
+        //else if(day == 2)
+        //{
+        //    Print("Вторник");
+        //}
+        //else if (day == 3)
+        //{
+        //    Print("Среда");
+        //}
+        //else if (day == 4)
+        //{
+        //    Print("Четверг");
+        //}
+        //else if (day == 5)
+        //{
+        //    Print("Пятница");
+        //}
+        //else if (day > 5 && day <= 7)
+        //{
+        //    Print("Суббота или воскресенье");
+        //}
+        //else
+        //{
+        //    Print("Нет такого");
+        //}
+    }
+
+    public void LevelSelect()
+    {
+        Print("Выберете уровень сложности");
+
+        int level = GetInt();
+
+        switch (level)
+        {
+            case (int)LevelSelection.Easy:
+                Print("10 zombi");
+                break;
+            case (int)LevelSelection.Normal:
+                Print("20 zombi");
+                break;
+            case (int)LevelSelection.Hard:
+                Print("50 zombi");
+                break;
+            default:
+                Print("0 zombi");
+                break;
+        }
+    }
+
+    public void ExampleFor()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            if (i == 5)
+            {
+                //continue;
+                //break;
+                //return;
+            }
+            Print($"{i}) Roman");
+        }
+
+
+        Print("--------------");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+        Print("Roman");
+    }
+
+    public void ExampleWhile()
+    {
+        int i = 1;
+        while (i >= 10)
+        {
+            Print($"{i}) Roman");
+            i++;
+        }
+
+        i = 1;
+
+        do
+        {
+            Print($"{i}) Ivan");
+            i++;
+        } while (i >= 10);
+    }
+
+    public void ExampleTryInt()
+    {
+        int number;
+        bool isNumber;
+        do
+        {
+            Print("Введите число");
+            isNumber = Int32.TryParse(GetString(), out number);
+        } while (!isNumber);
     }
 }
