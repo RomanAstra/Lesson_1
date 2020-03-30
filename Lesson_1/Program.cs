@@ -6,7 +6,7 @@ public class Program
     {
         Example example = new Example();
 
-        example.MaxNumber();
+        example.GetJob();
         Pause();
     }
 }

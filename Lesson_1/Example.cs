@@ -40,9 +40,6 @@ public class Example
             }
         }
 
-
-
-
         //int maxNumber = firstNumber > secondNumber ? firstNumber : secondNumber;
         Print(maxNumber);
     }
@@ -51,10 +48,33 @@ public class Example
     {
         // && и
         // || или
-
-        if (true || false)
+        if (false)
+        {
+            Print("No");
+        }
+        else if (true || false)
         {
             Print("Yes");
+        }
+        else
+        {
+            Print("MB");
+        }
+    }
+
+    public void GetJob()
+    {
+        Print("Сколько тебе лет?");
+
+        int age = GetInt();
+
+        if (age >= 18)
+        {
+            Print("Го работать");
+        }
+        //else
+        {
+            GetJob();
         }
     }
 }
